@@ -19,5 +19,7 @@ from StuLogin.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('stulogin/', stulogin),
-    path('login/',login)
+    path('login/',login),
+    path('facility/',showFacility),
+    path('facility/<str:fid>',facilityDetail)
 ]

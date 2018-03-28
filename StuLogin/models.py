@@ -8,6 +8,22 @@
 from django.db import models
 
 
+class Facility(models.Model):
+    index = models.AutoField(primary_key=True)
+    fid = models.CharField(db_column='FID', max_length=20)  # Field name made lowercase.
+    status = models.IntegerField(db_column='Status')  # Field name made lowercase.
+    type = models.IntegerField(db_column='Type')  # Field name made lowercase.
+    address = models.CharField(max_length=20)
+
+    class Meta:
+        managed = False
+        db_table = 'facility'
+        unique_together = (('index', 'fid'),)
+
+    def __str__(self):
+        return self.fid
+
+
 class User(models.Model):
     index = models.AutoField(primary_key=True)
     id = models.IntegerField(db_column='ID')  # Field name made lowercase.
@@ -19,5 +35,6 @@ class User(models.Model):
         managed = False
         db_table = 'user'
         unique_together = (('index', 'id'),)
+
     def __str__(self):
         return self.name
