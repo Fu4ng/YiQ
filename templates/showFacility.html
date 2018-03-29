@@ -11,9 +11,9 @@
         设备编号：
         <a href="/facility/{{ facility.fid }}">{{ facility.fid }}</a>
         设备类型：
-        {% if f.type == 1 %}
+        {% if facility.type == 1 %}
             空调
-        {% elif f.type == 2 %}
+        {% elif facility.type == 2 %}
             电梯
         {% else %}
             新设备
