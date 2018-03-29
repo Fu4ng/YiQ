@@ -29,9 +29,9 @@ def login(request):
                 #登录成功
                 #跳转到展示信息
                 if(user.type== 1): #如果用户是学生的话
-                    return redirect('http://127.0.0.1:8000/showInfo/'+username)
+                    return redirect('http://fu4ng.club:8000/showInfo/'+username)
                 elif(user.type==2): #如果用户是管理员的话，跳转到设备界面
-                    return redirect('http://127.0.0.1:8000/facility/')
+                    return redirect('http://fu4ng.club:8000/facility/')
             else:
                 return HttpResponse('用户名或密码错误,请重新登录')
 
