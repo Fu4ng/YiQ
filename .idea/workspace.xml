@@ -46,11 +46,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="facilityDetail.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="facilityDetail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/facilityDetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="736">
-              <caret line="32" column="7" lean-forward="true" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
+            <state relative-caret-position="368">
+              <caret line="16" column="8" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="16" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="showFacility.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/showFacility.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="575">
+              <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -101,12 +111,12 @@
         <option value="$PROJECT_DIR$/../EQin/templates/facilityDetail.html" />
         <option value="$PROJECT_DIR$/StuLogin/models.py" />
         <option value="$PROJECT_DIR$/StuLogin/admin.py" />
-        <option value="$PROJECT_DIR$/templates/showFacility.html" />
         <option value="$PROJECT_DIR$/templates/showComment.html" />
         <option value="$PROJECT_DIR$/YiQ/urls.py" />
         <option value="$PROJECT_DIR$/templates/showInfo.html" />
         <option value="$PROJECT_DIR$/StuLogin/views.py" />
         <option value="$PROJECT_DIR$/templates/facilityDetail.html" />
+        <option value="$PROJECT_DIR$/templates/showFacility.html" />
       </list>
     </option>
   </component>
@@ -287,6 +297,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -360,6 +371,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
           <caret line="12" column="29" lean-forward="true" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -606,13 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/showFacility.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="23" lean-forward="true" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/showComment.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -660,8 +665,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/facilityDetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="32" column="7" lean-forward="true" selection-start-line="32" selection-start-column="7" selection-end-line="32" selection-end-column="7" />
+        <state relative-caret-position="368">
+          <caret line="16" column="8" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="16" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/showFacility.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
           <folding />
         </state>
       </provider>

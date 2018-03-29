@@ -8,9 +8,17 @@
 <h3>易勤平台</h3>
 {% for facility in f_list %}
     <p>
-    设备编号：
-    <a href="/facility/{{ facility.fid }}">{{ facility.fid }}</a>
-      位于{{ facility.address}}
+        设备编号：
+        <a href="/facility/{{ facility.fid }}">{{ facility.fid }}</a>
+        设备类型：
+        {% if f.type == 1 %}
+            空调
+        {% elif f.type == 2 %}
+            电梯
+        {% else %}
+            新设备
+        {% endif %}
+        位于{{ facility.address}}
     </p>
     {% endfor %}
 
