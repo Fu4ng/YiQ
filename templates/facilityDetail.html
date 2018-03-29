@@ -5,6 +5,16 @@
     <title>{{ fid }}管理页面</title>
 </head>
 <body>
+    <p>
+        设备类型：
+        {% if f.type == 1 %}
+            空调
+        {% elif f.type == 2 %}
+            电梯
+        {% else %}
+            新设备
+        {% endif %}
+    </p>
     <p>设备编号：{{ f.fid }}</p><br>
     <p>设备地址：{{ f.address }}</p><br>
     <p>设备状况：{% if f.status == 1%}
