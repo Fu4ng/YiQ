@@ -23,15 +23,15 @@ def login(request):
             username = userform.cleaned_data['username']
             password = userform.cleaned_data['password']
 
-            user = User.objects.filter(id=username,pwd=password)
+            user = User.objects.get(id=username,pwd=password)
 
             if user:
                 #登录成功
                 #跳转到展示信息
-                if(user.type == 1 ): #如果用户是学生的话
-                    return render_to_response('StuLogin.html',{'userform':userform})
-                elif(user.type==0): #如果用户是管理员的话，跳转到设备界面
-                    return render_to_response('showFacility.html')
+                if(user.type== 1): #如果用户是学生的话
+                    return redirect('http://127.0.0.1:8000/showInfo/'+username)
+                elif(user.type==2): #如果用户是管理员的话，跳转到设备界面
+                    return redirect('http://127.0.0.1:8000/facility/')
             else:
                 return HttpResponse('用户名或密码错误,请重新登录')
 
@@ -39,7 +39,11 @@ def login(request):
         userform = UserForm()
     return render_to_response('login.html',{'userform':userform})
 
-
+def showInfo(request,id):
+    template = get_template('showInfo.html')
+    u=User.objects.get(id=id)
+    html = template.render(locals())
+    return HttpResponse(html)
 
 def showFacility(request):
     template = get_template('showFacility.html')
@@ -55,6 +59,12 @@ def facilityDetail(request,fid):
             return HttpResponse(html)
     except:
         return redirect('/')
+
+def showComment(request,fid):
+    template = get_template('showComment.html')
+    c_list = Comment.objects.filter(fid=fid)
+    html = template.render(locals())
+    return HttpResponse(html)
 
 def stulogin(request):
     return redirect("http://www.baidu.com")

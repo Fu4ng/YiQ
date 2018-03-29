@@ -21,5 +21,7 @@ urlpatterns = [
     path('stulogin/', stulogin),
     path('login/',login),
     path('facility/',showFacility),
-    path('facility/<str:fid>',facilityDetail)
+    path('facility/<str:fid>',facilityDetail),
+    path('facility/<str:fid>/comment',showComment),
+    path('showInfo/<str:id>',showInfo)
 ]

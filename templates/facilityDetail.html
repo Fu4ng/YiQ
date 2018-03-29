@@ -7,10 +7,16 @@
 <body>
     <p>设备编号：{{ f.fid }}</p><br>
     <p>设备地址：{{ f.address }}</p><br>
-    <p>设备状况：{% if(f.stutas == 1): print("正在工作")
-        elif(f.stutas == 0): print("正在维修")
-                    else: print("特殊情况原因不明") %}</p>
+    <p>设备状况：{% if f.status == 1%}
+                  正在工作
+                {% elif f.status == 0 %}
+                    正在维修
+                {% else %}
+                    特殊情况，原因不明
+                {% endif %}
+    </p>
 <h3>
+    <a href="/facility/{{ f.fid }}/comment">点击查看 {{ f.fid }} 的评论</a>
     <a href="/">回首页</a>
 </h3>
 </body>

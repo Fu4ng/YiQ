@@ -8,6 +8,19 @@
 from django.db import models
 
 
+class Comment(models.Model):
+    index = models.AutoField(primary_key=True)
+    fid = models.CharField(max_length=20)
+    id = models.IntegerField()
+    text = models.CharField(max_length=255, blank=True, null=True)
+    date = models.DateTimeField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'comment'
+        unique_together = (('index', 'fid', 'id'),)
+
+
 class Facility(models.Model):
     index = models.AutoField(primary_key=True)
     fid = models.CharField(db_column='FID', max_length=20)  # Field name made lowercase.
@@ -19,9 +32,6 @@ class Facility(models.Model):
         managed = False
         db_table = 'facility'
         unique_together = (('index', 'fid'),)
-
-    def __str__(self):
-        return self.fid
 
 
 class User(models.Model):
@@ -35,6 +45,3 @@ class User(models.Model):
         managed = False
         db_table = 'user'
         unique_together = (('index', 'id'),)
-
-    def __str__(self):
-        return self.name
