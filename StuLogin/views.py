@@ -16,6 +16,13 @@ class UserForm(forms.Form):
     username = forms.CharField(label='用户名',max_length=50)
     password = forms.CharField(label='密码',widget=forms.PasswordInput())
 
+
+class RepairForm(forms.Form):
+    fid = forms.CharField(label='设备ID', max_length=20)
+    id = forms.CharField(label='学生ID', max_length=50)
+    text = forms.CharField(label='报修内容<br>',widget=forms.Textarea)
+
+
 def login(request):
     if request.method == 'POST':
         userform = UserForm(request.POST)
@@ -29,9 +36,9 @@ def login(request):
                 #登录成功
                 #跳转到展示信息
                 if(user.type== 1): #如果用户是学生的话
-                    return redirect('http://fu4ng.club:8000/showInfo/'+username)
+                    return redirect('http://127.0.0.1:8000/showInfo/'+username)
                 elif(user.type==2): #如果用户是管理员的话，跳转到设备界面
-                    return redirect('http://fu4ng.club:8000/facility/')
+                    return redirect('http://127.0.0.1:8000/facility/')
             else:
                 return HttpResponse('用户名或密码错误,请重新登录')
 
@@ -39,6 +46,25 @@ def login(request):
         userform = UserForm()
     return render_to_response('login.html',{'userform':userform})
 
+def repair(request):
+    if request.method == 'POST':
+        repairform = RepairForm(request.POST)
+        if repairform.is_valid():
+            fid = repairform.cleaned_data['fid']
+            id = repairform.cleaned_data['id']
+            # 对id和fid 验证
+            f = Facility.objects.get(fid = fid)
+            u = User.objects.get(id = id)
+            if f and u:
+                text = repairform.cleaned_data['text']
+                repairData = WRecords.objects.create(fid=fid,id=id,text=text)
+                print(type(repairData), repairData)
+                return HttpResponse("报修成功")
+            else:
+                return HttpResponse("设备ID或学生ID不存在")
+    else:
+        repairform = RepairForm()
+    return render_to_response('repair.html', {'repairform': repairform})
 def showInfo(request,id):
     template = get_template('showInfo.html')
     u=User.objects.get(id=id)
@@ -65,6 +91,9 @@ def showComment(request,fid):
     c_list = Comment.objects.filter(fid=fid)
     html = template.render(locals())
     return HttpResponse(html)
+
+
+
 
 def stulogin(request):
     return redirect("http://www.baidu.com")

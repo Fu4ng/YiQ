@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>报修页面</title>
+</head>
+<body>
+<h1>报修页面</h1>
+<form method = 'post' enctype="multipart/form-data">
+{#    {% csrf_token %}#}
+    {{repairform.as_p}}
+    <input type="submit" value = "点击报修" />
+</form>
+</body>
+</html>

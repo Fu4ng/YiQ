@@ -7,5 +7,8 @@
 <body>
     姓名：{{ u.name}}
     学号：{{ u.id }}
+    {% if u.type == 1 %}
+        <a href="http://127.0.0.1:8000/repair/">点击报修</a>
+    {% endif %}
 </body>
 </html>

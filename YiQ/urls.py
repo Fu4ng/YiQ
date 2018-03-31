@@ -23,5 +23,6 @@ urlpatterns = [
     path('facility/',showFacility),
     path('facility/<str:fid>',facilityDetail),
     path('facility/<str:fid>/comment',showComment),
-    path('showInfo/<str:id>',showInfo)
+    path('showInfo/<str:id>',showInfo),
+    path('repair/',repair)
 ]
