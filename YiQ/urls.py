@@ -24,5 +24,6 @@ urlpatterns = [
     path('facility/<str:fid>',facilityDetail),
     path('facility/<str:fid>/comment',showComment),
     path('showInfo/<str:id>',showInfo),
-    path('repair/',repair)
+    path('repair/',repair),
+    # path(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT})
 ]
