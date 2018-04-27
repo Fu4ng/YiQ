@@ -3,24 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>设备列表</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h3>易勤平台</h3>
-{% for facility in f_list %}
-    <p>
-        设备编号：
-        <a href="/facility/{{ facility.fid }}">{{ facility.fid }}</a>
-        设备类型：
-        {% if facility.type == 1 %}
-            空调
-        {% elif facility.type == 2 %}
-            电梯
-        {% else %}
-            新设备
-        {% endif %}
-        位于{{ facility.address}}
-    </p>
-    {% endfor %}
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">易勤平台</a>
+        </div>
+    </div>
+</nav>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>设备编号</th>
+        <th>设备类型</th>
+        <th>所在地点</th>
+    </tr>
+    </thead>
+    <tbody>
 
+
+    {% for facility in f_list %}
+        <tr>
+            <td><a href="/facility/{{ facility.fid }}">{{ facility.fid }}</a></td>
+
+            <td>
+                {% if facility.type == 1 %}
+                    空调
+                {% elif facility.type == 2 %}
+                    电梯
+                {% else %}
+                    新设备
+                    </td>
+                {% endif %}
+            <td>
+                {{ facility.address }}
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
 </body>
 </html>

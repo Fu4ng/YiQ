@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-{% load static %}
-<html lang="zh-CN"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,35 +13,56 @@
     <title>Login</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="{% static 'css/ie10-viewport-bug-workaround.css' %}" rel="stylesheet">
+    <link href="/static/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="{% static 'css/signin.css' %}" rel="stylesheet">
+    <link href="/static/css/signin.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="{% static 'js/ie-emulation-modes-warning.js' %}"></script>
+    <script src="/static/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="../static/style/login.css" type="text/css">
-  </head>
+</head>
 <style>
-        html,body{text-align:center;margin:0px auto;}
+    html, body {
+        text-align: center;
+        margin: 0px auto;
+    }
 </style>
 <body>
 <h1>登录页面</h1>
-<form method = 'post' enctype="multipart/form-data" class = 'login'>
-{#    {% csrf_token %}#}
-    <div class = 'login-form'>{{userform.as_p}}</div>
-    <input type="submit" value = "Login" />
-</form>
+
+
+<div style="padding: 100px 100px 10px;">
+    <form class="bs-example bs-example-form" role="form" method='post' enctype="multipart/form-data">
+        <div class="input-group">
+            <span class="input-group-addon">用户名</span>
+            <input type="text" class="form-control" name="username" id="id_username"
+                   maxlength="50" required>
+        </div>
+        <br>
+        <div class="input-group">
+            <span class="input-group-addon">密&nbsp;&nbsp;&nbsp;&nbsp;码</span>
+            <input class="form-control" type="password" name="password"
+                   id="id_password" required>
+        </div>
+        <input class="btn btn-lg btn-success" type="submit" value="Login">
+        <input class="btn btn-lg btn-warning" type="reset" value="Reset">
+    </form>
+</div>
+
+
 </body>
 </html>

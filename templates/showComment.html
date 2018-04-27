@@ -2,23 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ f.fid }}的评论</title>
+    <title>设备评论区</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h3>易勤平台</h3>
-{% for comment  in c_list %}
-    <p>
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">设备评论区</a>
+        </div>
+    </div>
+</nav>
+<table class="table table-bordered">
+    <tbody>
 
-      内容：{{ comment.text }}
-    </p>
-    <p>
-      发布时间：{{ comment.date }}
-    </p>
-    <p>
-      发布者：{{ comment.id }}
-      <a href="comment/{{ comment.index }}">管理评论</a>
-    </p><br><br>
+
+    {% for comment  in c_list %}
+        <tr>
+            <p>
+
+                内容：
+            <pre>{{ comment.text }}</pre>
+            </p>
+            <p>
+                发布时间：{{ comment.date }}
+            </p>
+            <p>
+                发布者：{{ comment.id }}
+                <a href="comment/{{ comment.index }}">管理评论</a>
+            </p>
+        </tr>
+
     {% endfor %}
-
+    </tbody>
+</table>
 </body>
 </html>

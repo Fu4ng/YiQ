@@ -3,28 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ fid }}管理页面</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <p>
-        设备类型：
-        {% if f.type == 1 %}
+<table class="table table-bordered">
+
+    <thead>
+    <tr>
+        <th>基本信息</th>
+        <th>数据</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>设备类型</td>
+        <td> {% if f.type == 1 %}
             空调
         {% elif f.type == 2 %}
             电梯
         {% else %}
             新设备
-        {% endif %}
-    </p>
-    <p>设备编号：{{ f.fid }}</p><br>
-    <p>设备地址：{{ f.address }}</p><br>
-    <p>设备状况：{% if f.status == 1%}
-                  正在工作
-                {% elif f.status == 0 %}
-                    正在维修
-                {% else %}
-                    特殊情况，原因不明
-                {% endif %}
-    </p>
+        {% endif %}</td>
+
+    </tr>
+    <tr>
+        <td>设备编号</td>
+        <td>{{ f.fid }}</td>
+    </tr>
+    <tr>
+        <td>设备地址</td>
+        <td>{{ f.address }}</td>
+    </tr>
+    <tr>
+        <td>设备状况</td>
+        <td>
+            {% if f.status == 1 %}
+                正在工作
+            {% elif f.status == 0 %}
+                正在维修
+            {% else %}
+                特殊情况，原因不明
+            {% endif %}
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+
 <h3>
     <a href="/facility/{{ f.fid }}/comment">点击查看 {{ f.fid }} 的评论</a>
     <a href="/">回首页</a>

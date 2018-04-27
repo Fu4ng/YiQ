@@ -3,13 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>报修页面</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<h1>报修页面</h1>
-<form method = 'post' enctype="multipart/form-data">
-{#    {% csrf_token %}#}
-    {{repairform.as_p}}
-    <input type="submit" value = "点击报修" />
+
+
+<form class="form-horizontal" role="form" method='post' enctype="multipart/form-data">
+    <div class="col-sm-offset-3 col-sm-9"><h1>报修页面</h1></div>
+    <div class="form-group">
+        <label for="firstname" class="col-sm-2 control-label">设备ID:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="fid" required id="id_fid" maxlength="20">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="firstname" class="col-sm-2 control-label">学生ID:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="id" required id="id_id" maxlength="50">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="firstname" class="col-sm-2 control-label">报修内容</label>
+        <div class="col-sm-6">
+            <textarea class="form-control " name="text" required rows="10" id="id_text"></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">点击报修</button>
+        </div>
+    </div>
 </form>
 </body>
 </html>

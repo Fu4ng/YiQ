@@ -44,7 +44,7 @@ def login(request):
 
     else:
         userform = UserForm()
-    return render_to_response('login.html',{'userform':userform})
+    return render_to_response('login.html')
 
 def repair(request):
     if request.method == 'POST':
@@ -64,7 +64,7 @@ def repair(request):
                 return HttpResponse("设备ID或学生ID不存在")
     else:
         repairform = RepairForm()
-    return render_to_response('repair.html', {'repairform': repairform})
+    return render_to_response('repair.html')
 def showInfo(request,id):
     template = get_template('showInfo.html')
     u=User.objects.get(id=id)

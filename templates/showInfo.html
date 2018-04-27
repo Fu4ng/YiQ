@@ -3,12 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>个人信息</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    姓名：{{ u.name}}
-    学号：{{ u.id }}
-    {% if u.type == 1 %}
-        <a href="http://127.0.0.1:8000/repair/">点击报修</a>
-    {% endif %}
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">易勤平台</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user" style="font-size: 20px"></span> {{ u.name }}</a></li>
+            <li>
+                {% if u.type == 1 %}
+                    <a href="http://127.0.0.1:8000/repair/"><span class="glyphicon glyphicon-zoom-in"
+                                                                  style="font-size: 20px"></span> 点击报修</a>
+                {% endif %}
+            </li>
+        </ul>
+    </div>
+</nav>
 </body>
 </html>

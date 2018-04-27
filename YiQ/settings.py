@@ -80,7 +80,8 @@ DATABASES = {
         'NAME': 'yiq',
         'USER': 'root',
         'HOST': '127.0.0.1',
-        'PASSWORD': 'kkuu9038',
+        # 'PASSWORD': 'kkuu9038',
+        'PASSWORD': 'toor',
         'PORT': '3306',
     }
 }
